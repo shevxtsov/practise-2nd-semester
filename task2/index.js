@@ -32,17 +32,78 @@ function getAge(day, month, year) {
 
 function printDigit(digit) {
   const digits = [
-    " ***  *   * *   * *   * *   *  *** ",
-    "  *    **    *    *    *    *   *** ",
-    " ***    *    *   ***  *    *   *** ",
-    " ***    *    *   ***    *    *   *** ",
-    " *   * *   * *   *  ***    *    *   ",
-    " ***  *    *    ***    *    *   *** ",
-    " ***  *    *    ***  *   * *   *** ",
-    " ***    *    *    *    *    *    * ",
-    " ***  *   * *   *  ***  *   *  *** ",
-    " ***  *   * *   *  ***    *    *** ",
+    `
+    ***  
+    * *  
+    * *  
+    * *  
+    ***  
+    `,
+    `
+      *  
+     **  
+      *  
+      *  
+    ***  
+    `,
+    `
+    ***  
+      *  
+    ***  
+    *    
+    ***  
+    `,
+    `
+    ***  
+      *  
+    ***  
+      *  
+    ***  
+    `,
+    `
+    * *  
+    * *  
+    ***  
+      *  
+      *  
+    `,
+    `
+    ***  
+    *   
+    ***  
+      *  
+    ***  
+    `,
+    `
+    ***  
+    *    
+    ***  
+    * *  
+    ***  
+    `,
+    `
+    ***  
+      *  
+      *  
+      *  
+      *  
+    `,
+    `
+    ***  
+    * *  
+    ***  
+    * *  
+    ***  
+    `,
+    `
+    ***  
+    * *  
+    ***  
+      *  
+    ***  
+    `,
   ];
+
   return digits[digit];
 }
 
@@ -52,7 +113,8 @@ function printDate(day, month, year) {
     "0"
   )} ${year}`;
   let output = "\n";
-  for (let i = 0; i < 5; i++) {
+
+  for (let i = 0; i < 6; i++) {
     for (let char of dateStr) {
       if (char === " ") {
         output += "     ";
@@ -60,8 +122,10 @@ function printDate(day, month, year) {
         output += printDigit(parseInt(char)).split("\n")[i] + "  ";
       }
     }
+
     output += "\n";
   }
+
   console.log(output);
 }
 
